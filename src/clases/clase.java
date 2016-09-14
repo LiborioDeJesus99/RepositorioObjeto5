@@ -50,5 +50,32 @@ public class clase {
     public void setSaldo_actual(double saldo_actual) {
         this.saldo_actual = saldo_actual;
     }
-    
+
+    public void ActulizarSaldo(double Ian) {
+        double Aux, Aux2;
+        Aux = this.getSaldo_actual() * (Ian / 365);
+        Aux2 = this.getSaldo_actual() + Aux;
+        this.setSaldo_actual(Aux2);
+    }
+
+    public void Ingresar(double Ingreso) {
+        double Aux;
+        Aux = this.getSaldo_actual() + Ingreso;
+        this.setSaldo_actual(Aux);
+    }
+
+    public void Retirar(double Egreso) {
+        double Aux;
+        Aux = this.getSaldo_actual() - Egreso;
+        this.setSaldo_actual(Aux);
+
+    }
+
+    public String Mostrar() {
+        String Aux;
+        Aux = "No. de la cuenta: " + this.getNumero_cuenta() + "\n"
+            + "No. de Identificación: " + this.getNumero_identificacion() + "\n"
+            + "Saldo Actual: " + this.getSaldo_actual();
+        return Aux;
+    }
 }
