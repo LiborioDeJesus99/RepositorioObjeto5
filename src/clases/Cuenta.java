@@ -9,19 +9,19 @@ package clases;
  *
  * @author liborio
  */
-public class clase {
+public class Cuenta {
 
     private long numero_cuenta;
     private long numero_identificacion;
     private double saldo_actual;
 
-    public clase(long numero_cuenta, long numero_identificacion, double saldo_actual) {
+    public Cuenta(long numero_cuenta, long numero_identificacion, double saldo_actual) {
         this.numero_cuenta = numero_cuenta;
         this.numero_identificacion = numero_identificacion;
         this.saldo_actual = saldo_actual;
     }
 
-    public clase(long numero_cuenta, long numero_identifacion) {
+    public Cuenta(long numero_cuenta, long numero_identifacion) {
         this.numero_cuenta = numero_cuenta;
         this.numero_identificacion = numero_identifacion;
         this.saldo_actual = 0;
@@ -74,8 +74,8 @@ public class clase {
     public String Mostrar() {
         String Aux;
         Aux = "No. de la cuenta: " + this.getNumero_cuenta() + "\n"
-            + "No. de Identificación: " + this.getNumero_identificacion() + "\n"
-            + "Saldo Actual: " + this.getSaldo_actual();
+                + "No. de Identificación: " + this.getNumero_identificacion() + "\n"
+                + "Saldo Actual: " + this.getSaldo_actual();
         return Aux;
     }
 }

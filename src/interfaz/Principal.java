@@ -27,20 +27,100 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtNCuenta = new javax.swing.JTextField();
+        txtNIde = new javax.swing.JTextField();
+        txtSA = new javax.swing.JTextField();
+        txtInteA = new javax.swing.JTextField();
+        cmdGuardar = new javax.swing.JButton();
+        cmdActualizar = new javax.swing.JButton();
+        cmdIngresar = new javax.swing.JButton();
+        cmdRetirar = new javax.swing.JButton();
+        cmdMostrar = new javax.swing.JButton();
+        cmdLimpiar = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtR = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setText("Cuenta");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14))); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setText("No. De Cuenta");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        jLabel3.setText("No. De Identificación");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, 20));
+
+        jLabel4.setText("Saldo Actual");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 20));
+
+        jLabel5.setText("Interes Anual");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, 40));
+        jPanel2.add(txtNCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 110, -1));
+
+        txtNIde.setText(" ");
+        jPanel2.add(txtNIde, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 110, -1));
+        jPanel2.add(txtSA, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 110, -1));
+        jPanel2.add(txtInteA, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 110, -1));
+
+        cmdGuardar.setText("Guardar");
+        jPanel2.add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 30));
+
+        cmdActualizar.setText("Actualizar");
+        jPanel2.add(cmdActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, 30));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 280, 190));
+
+        cmdIngresar.setText("Ingresar");
+        jPanel1.add(cmdIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 80, 30));
+
+        cmdRetirar.setText("Retirar");
+        jPanel1.add(cmdRetirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 80, 30));
+
+        cmdMostrar.setText("Mostrar");
+        jPanel1.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 80, 30));
+
+        cmdLimpiar.setText("Limpiar");
+        jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 80, 30));
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Detalles De Facturación ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14))); // NOI18N
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtR.setColumns(20);
+        txtR.setRows(5);
+        jScrollPane1.setViewportView(txtR);
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 16, 280, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 300, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -79,5 +159,25 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdActualizar;
+    private javax.swing.JButton cmdGuardar;
+    private javax.swing.JButton cmdIngresar;
+    private javax.swing.JButton cmdLimpiar;
+    private javax.swing.JButton cmdMostrar;
+    private javax.swing.JButton cmdRetirar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField txtInteA;
+    private javax.swing.JTextField txtNCuenta;
+    private javax.swing.JTextField txtNIde;
+    private javax.swing.JTextArea txtR;
+    private javax.swing.JTextField txtSA;
     // End of variables declaration//GEN-END:variables
 }
