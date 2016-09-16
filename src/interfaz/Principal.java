@@ -5,6 +5,9 @@
  */
 package interfaz;
 
+import clases.Cuenta;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author liborio
@@ -14,8 +17,18 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+    Cuenta c;
+
     public Principal() {
         initComponents();
+        cmdGuardar.setEnabled(true);
+        cmdIngresar.setEnabled(false);
+        cmdActualizar.setEnabled(false);
+        cmdRetirar.setEnabled(false);
+        cmdLimpiar.setEnabled(true);
+        cmdMostrar.setEnabled(false);
+        txtRetirar.setEditable(false);
+        txtIngresar.setEditable(false);
     }
 
     /**
@@ -27,6 +40,8 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -38,8 +53,10 @@ public class Principal extends javax.swing.JFrame {
         txtNIde = new javax.swing.JTextField();
         txtSA = new javax.swing.JTextField();
         txtInteA = new javax.swing.JTextField();
-        cmdGuardar = new javax.swing.JButton();
-        cmdActualizar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        txtIngresar = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtRetirar = new javax.swing.JTextField();
         cmdIngresar = new javax.swing.JButton();
         cmdRetirar = new javax.swing.JButton();
         cmdMostrar = new javax.swing.JButton();
@@ -47,6 +64,12 @@ public class Principal extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtR = new javax.swing.JTextArea();
+        cmdGuardar = new javax.swing.JButton();
+        cmdActualizar = new javax.swing.JButton();
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,69 +82,363 @@ public class Principal extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("No. De Cuenta");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, 20));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("No. De Identificación");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, 20));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("Saldo Actual");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 20));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("Interes Anual");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, 40));
+
+        txtNCuenta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNCuentaKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtNCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 110, -1));
 
-        txtNIde.setText(" ");
+        txtNIde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNIdeActionPerformed(evt);
+            }
+        });
+        txtNIde.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNIdeKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtNIde, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 110, -1));
+
+        txtSA.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSAKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtSA, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 110, -1));
+
+        txtInteA.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtInteAKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtInteA, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 110, -1));
 
-        cmdGuardar.setText("Guardar");
-        jPanel2.add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 30));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setText("Ingresar");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 150, 50, -1));
 
-        cmdActualizar.setText("Actualizar");
-        jPanel2.add(cmdActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, 30));
+        txtIngresar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIngresarKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 110, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 280, 190));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setText("Retirar");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 180, 50, -1));
 
+        txtRetirar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRetirarKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtRetirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 110, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 280, 240));
+
+        cmdIngresar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cmdIngresar.setText("Ingresar");
-        jPanel1.add(cmdIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 80, 30));
+        cmdIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdIngresarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 90, 30));
 
+        cmdRetirar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cmdRetirar.setText("Retirar");
-        jPanel1.add(cmdRetirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 80, 30));
+        cmdRetirar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdRetirarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdRetirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 90, 30));
 
+        cmdMostrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cmdMostrar.setText("Mostrar");
-        jPanel1.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 80, 30));
+        cmdMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdMostrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 90, 30));
 
+        cmdLimpiar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cmdLimpiar.setText("Limpiar");
-        jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 80, 30));
+        cmdLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdLimpiarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 90, 30));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Detalles De Facturación ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txtR.setEditable(false);
         txtR.setColumns(20);
         txtR.setRows(5);
         jScrollPane1.setViewportView(txtR);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 16, 280, -1));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 310, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 300, 120));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 330, 130));
+
+        cmdGuardar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cmdGuardar.setText("Guardar");
+        cmdGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdGuardarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 90, 30));
+
+        cmdActualizar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cmdActualizar.setText("Actualizar");
+        cmdActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdActualizarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 90, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGuardarActionPerformed
+
+        long NCuenta, NIde;
+        double SA;
+
+        if (txtNCuenta.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese El Número De Cuenta Por Favor");
+            txtNCuenta.requestFocusInWindow();
+        } else if (txtNIde.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese El Número De Identificaciòn Por Favor");
+            txtNIde.requestFocusInWindow();
+        } else if (txtSA.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese Su Saldo Inicial Por Favor");
+            txtSA.requestFocusInWindow();
+        } else if (txtInteA.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese El Interes Anual Por Favor");
+            txtInteA.requestFocusInWindow();
+        } else {
+            NCuenta = Long.parseLong(txtNCuenta.getText());
+            NIde = Long.parseLong(txtNIde.getText());
+            SA = Double.parseDouble(txtSA.getText());
+
+            c = new Cuenta(NCuenta, NIde, SA);
+            JOptionPane.showMessageDialog(this, "Guardado Con Exito");
+            txtInteA.setEditable(false);
+            txtNCuenta.setEditable(false);
+            txtNIde.setEditable(false);
+            txtSA.setEditable(false);
+
+            cmdGuardar.setEnabled(false);
+            cmdIngresar.setEnabled(false);
+            cmdActualizar.setEnabled(false);
+            cmdRetirar.setEnabled(false);
+            cmdLimpiar.setEnabled(true);
+            cmdMostrar.setEnabled(true);
+        }
+    }//GEN-LAST:event_cmdGuardarActionPerformed
+    private void cmdActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdActualizarActionPerformed
+
+        try {
+            double A;
+            A = Double.parseDouble(txtInteA.getText());
+            c.ActulizarSaldo(A);
+            txtR.append("\nSu Saldo Actualizado Es: $ " + c.getSaldo_actual() + "\n");
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Digite Numeros Validos");
+            txtInteA.selectAll();
+            txtInteA.requestFocusInWindow();
+        }
+        cmdGuardar.setEnabled(false);
+        cmdIngresar.setEnabled(true);
+        cmdActualizar.setEnabled(true);
+        cmdRetirar.setEnabled(true);
+        cmdLimpiar.setEnabled(true);
+        cmdMostrar.setEnabled(false);
+        txtInteA.setEditable(true);
+        txtRetirar.setEditable(true);
+        txtIngresar.setEditable(true);
+    }//GEN-LAST:event_cmdActualizarActionPerformed
+    private void cmdIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdIngresarActionPerformed
+
+        if (txtIngresar.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por Favor Digite Cuanto Quiere Ingresar");
+            txtIngresar.requestFocusInWindow();
+        } else {
+            double a;
+            a = Double.parseDouble(txtIngresar.getText());
+            if (a == 0) {
+                JOptionPane.showMessageDialog(null, "Al Momento De Poner 0 Su Valor Sera Igual");
+                txtIngresar.requestFocusInWindow();
+            } else {
+                c.Ingresar(a);
+                txtR.append("Su Saldo Nuevo Es De: $ " + c.getSaldo_actual() + "\n");
+                cmdMostrar.setEnabled(true);
+            }
+            cmdGuardar.setEnabled(false);
+            cmdIngresar.setEnabled(true);
+            cmdActualizar.setEnabled(false);
+            cmdRetirar.setEnabled(true);
+            cmdLimpiar.setEnabled(true);
+            cmdMostrar.setEnabled(false);
+    }//GEN-LAST:event_cmdIngresarActionPerformed
+    }
+    private void cmdRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdRetirarActionPerformed
+
+        double R, SA;
+
+        if (txtRetirar.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por Favor Digite La Cantidad Retirar");
+            txtRetirar.requestFocusInWindow();
+        } else {
+            R = Double.parseDouble(txtRetirar.getText());
+            SA = c.getSaldo_actual();
+            if (SA < R) {
+                JOptionPane.showMessageDialog(this, "No Hay Saldo Suficiente Para El Retiro");
+                txtRetirar.setText("");
+            } else {
+                c.Retirar(R);
+                txtRetirar.setText("");
+                txtIngresar.setText("");
+                txtR.append("Su Saldo Actual Es De: $ " + c.getSaldo_actual() + "\n");
+            }
+        }
+    }//GEN-LAST:event_cmdRetirarActionPerformed
+    private void cmdLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLimpiarActionPerformed
+
+        c = null;
+        txtR.setText("");
+        txtInteA.setText("");
+        txtNCuenta.setText("");
+        txtNIde.setText("");
+        txtSA.setText("");
+
+        cmdGuardar.setEnabled(true);
+        cmdIngresar.setEnabled(false);
+        cmdActualizar.setEnabled(false);
+        cmdRetirar.setEnabled(false);
+        cmdLimpiar.setEnabled(true);
+        cmdMostrar.setEnabled(false);
+
+        txtNCuenta.setEditable(true);
+        txtNIde.setEditable(true);
+        txtSA.setEditable(true);
+        txtInteA.setEditable(true);
+        txtRetirar.setEditable(false);
+        txtIngresar.setEditable(false);
+    }//GEN-LAST:event_cmdLimpiarActionPerformed
+
+    private void cmdMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMostrarActionPerformed
+
+        c.Mostrar();
+        txtR.append(c.Mostrar() + "\n");
+        cmdGuardar.setEnabled(false);
+        cmdIngresar.setEnabled(false);
+        cmdActualizar.setEnabled(true);
+        cmdRetirar.setEnabled(false);
+        cmdLimpiar.setEnabled(true);
+        cmdMostrar.setEnabled(false);
+    }//GEN-LAST:event_cmdMostrarActionPerformed
+
+    private void txtNIdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNIdeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNIdeActionPerformed
+
+    private void txtNCuentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNCuentaKeyTyped
+
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNCuentaKeyTyped
+
+    private void txtNIdeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNIdeKeyTyped
+
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNIdeKeyTyped
+
+    private void txtSAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSAKeyTyped
+
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSAKeyTyped
+
+    private void txtInteAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInteAKeyTyped
+
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtInteAKeyTyped
+
+    private void txtIngresarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIngresarKeyTyped
+
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtIngresarKeyTyped
+
+    private void txtRetirarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRetirarKeyTyped
+
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtRetirarKeyTyped
 
     /**
      * @param args the command line arguments
@@ -170,14 +487,20 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField txtIngresar;
     private javax.swing.JTextField txtInteA;
     private javax.swing.JTextField txtNCuenta;
     private javax.swing.JTextField txtNIde;
     private javax.swing.JTextArea txtR;
+    private javax.swing.JTextField txtRetirar;
     private javax.swing.JTextField txtSA;
     // End of variables declaration//GEN-END:variables
 }

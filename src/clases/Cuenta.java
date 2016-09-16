@@ -73,9 +73,9 @@ public class Cuenta {
 
     public String Mostrar() {
         String Aux;
-        Aux = "No. de la cuenta: " + this.getNumero_cuenta() + "\n"
-                + "No. de Identificación: " + this.getNumero_identificacion() + "\n"
-                + "Saldo Actual: " + this.getSaldo_actual();
+        Aux = "No. De La Cuenta Es: " + this.getNumero_cuenta() + "\n"
+                + "No. De Identificaciòn Es: " + this.getNumero_identificacion() + "\n"
+                + "Su Saldo Actual Es: $ " + this.getSaldo_actual();
         return Aux;
     }
 }
